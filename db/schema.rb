@@ -10,12 +10,21 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_01_21_132353) do
+ActiveRecord::Schema.define(version: 2020_01_21_161304) do
 
   create_table "locations", force: :cascade do |t|
     t.string "name"
     t.integer "average_price"
     t.string "surf_location_name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.string "description"
+  end
+
+  create_table "surcamps", force: :cascade do |t|
+    t.string "name"
+    t.integer "stars"
+    t.integer "price"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
