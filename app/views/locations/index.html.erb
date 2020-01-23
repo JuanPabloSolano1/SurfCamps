@@ -76,7 +76,7 @@
           <div class="reel">
             <%@locations.each do |location| %>
             <article>
-              <a href="#" class="image featured"><img src="https://res.cloudinary.com/a1986/image/upload/v1579643324/surfing_lwsthr.jpg" alt="" /></a>
+              <a href="#" class="image featured"><%=image_tag location.photo, width: 400, height: 400, crop: :fill %></a>
               <header>
                 <h3><a href="#"><%=location.name%></a></h3>
               </header>

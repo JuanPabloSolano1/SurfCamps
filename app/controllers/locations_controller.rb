@@ -28,6 +28,6 @@ class LocationsController < ApplicationController
   end
 
     def review_params
-    params.require(:location).permit(:name,:description)
+    params.require(:location).permit(:name,:description,:photo)
   end
 end
