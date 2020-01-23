@@ -12,6 +12,7 @@ class LocationsController < ApplicationController
 
   def create
    @location = Location.create(review_params)
+   redirect_to(locations_path)
   end
 
   def edit

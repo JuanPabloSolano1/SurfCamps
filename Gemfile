@@ -27,7 +27,8 @@ gem 'simple_form'
 # gem 'redis', '~> 4.0'
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
-
+gem 'dotenv-rails', groups: [:development, :test]
+gem 'cloudinary', '~> 1.12.0'
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 
