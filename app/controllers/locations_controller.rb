@@ -4,6 +4,7 @@ class LocationsController < ApplicationController
   end
 
   def show
+    @location = Location.find(params[:id])
   end
 
   def new
@@ -20,6 +21,8 @@ class LocationsController < ApplicationController
   end
 
   def update
+  @location = Location.find(params[:id])
+  @location.update(review_params)
 
   end
 

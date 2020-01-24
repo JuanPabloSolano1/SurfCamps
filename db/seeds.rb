@@ -10,3 +10,5 @@
 
 # location1 = Location.new(name: "Maldives", average_price: 3, description: "An Amazing Villa close to the city")
 # location1.save
+
+

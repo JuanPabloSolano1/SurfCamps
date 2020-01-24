@@ -23,7 +23,7 @@
               <header>
                 <h1><a href="index.html" id="logo">Surf Camps</a></h1>
                 <hr />
-                <p>Another fine freebie by HTML5 UP</p>
+                <p>Let's get it</p>
               </header>
               <footer>
                 <a href="#banner" class="button circled scrolly">Start</a>
@@ -76,9 +76,13 @@
           <div class="reel">
             <%@locations.each do |location| %>
             <article>
-              <a href="#" class="image featured"><%=image_tag location.photo, width: 400, height: 400, crop: :fill %></a>
+              <%if location.photo.attached? %>
+              <a href="#" class="image featured"><%=image_tag location.photo, width: 400, height: 300, crop: :fill %></a>
+              <%end%>
               <header>
-                <h3><a href="#"><%=location.name%></a></h3>
+                <%= link_to(location_path(location)) do %>
+            <h3><strong><%=location.name%></strong></h3>
+            <% end %>
               </header>
               <p><%=location.description%></p>
               <p><%=location.average_price%></p>

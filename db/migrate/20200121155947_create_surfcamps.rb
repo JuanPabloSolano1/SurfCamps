@@ -1,6 +1,6 @@
-class CreateSurcamps < ActiveRecord::Migration[5.2]
+class CreateSurfcamps < ActiveRecord::Migration[5.2]
   def change
-    create_table :surcamps do |t|
+    create_table :surfcamps do |t|
       t.string :name
       t.integer :stars
       t.integer :price
