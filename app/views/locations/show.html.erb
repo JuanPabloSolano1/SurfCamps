@@ -1,1 +1,14 @@
 <h3><%=@location.name%></h3>
+
+ <section class="carousel">
+          <div class="reel">
+            <% @surfcamps.each do |surfcamp|%>
+            <article>
+              <header>
+              </header><%=link_to location_surfcamp_path(surfcamp) do %>
+              <h3><strong><%=surfcamp.name%></strong></h3>
+            <% end %>
+            <%end%>
+            </article>
+          </div>
+</section>

@@ -11,4 +11,15 @@
 # location1 = Location.new(name: "Maldives", average_price: 3, description: "An Amazing Villa close to the city")
 # location1.save
 
+# location1 = Location.create(name:"Spain")
+# location2 = Location.create(name:"France")
+# location3 = Location.create(name:"Colombia")
+# surfcamp1 = Surfcamp.create(name: "Mallorca",location_id: 1)
+# surfcamp2 = Surfcamp.create(name: "Canary Islands",location_id: 1)
+# surfcamp3 = Surfcamp.create(name: "Marsella",location_id: 2)
+# surfcamp4 = Surfcamp.create(name: "Paris",location_id: 2)
+# surfcamp5 = Surfcamp.create(name: "Cartagena",location_id: 3)
+
+
+p "seeds created"
 

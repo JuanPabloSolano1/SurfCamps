@@ -5,6 +5,7 @@ class LocationsController < ApplicationController
 
   def show
     @location = Location.find(params[:id])
+    @surfcamps = Surfcamp.select{|surfcamp| surfcamp if surfcamp.location_id == @location.id}
   end
 
   def new
@@ -30,7 +31,7 @@ class LocationsController < ApplicationController
 
   end
 
-    def review_params
+  def review_params
     params.require(:location).permit(:name,:description,:photo)
   end
 end
