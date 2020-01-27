@@ -6,6 +6,8 @@ class LocationsController < ApplicationController
   def show
     @location = Location.find(params[:id])
     @surfcamps = Surfcamp.select{|surfcamp| surfcamp if surfcamp.location_id == @location.id}
+    # Another way of filtering results
+    # @surfcamps = Surfcamp.where(location_id: @location.id)
   end
 
   def new

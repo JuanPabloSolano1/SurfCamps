@@ -1,1 +1,8 @@
+<div class="banner">
+  <%if @surfcamp.photo.attached?%>
+  <%=image_tag @surfcamp.photo%>
+  <%end%>
+</div>
+
 <h3><%=@surfcamp.name%></h3>
+

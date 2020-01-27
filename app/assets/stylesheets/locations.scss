@@ -99,6 +99,9 @@ input, select, textarea {
   *, *:before, *:after {
     box-sizing: inherit;
   }
+  section.carousel {
+    background-color: #f0f4f4;
+}
 
   body {
     background: #f0f4f4;
@@ -2610,7 +2613,7 @@ input, select, textarea {
       width: 18em;
       height: 600px;
       box-shadow: 0 0 15px rgba(0,0,0,0.2);
-      background: #fff;
+      background-color: #fff;
       text-align: center;
       padding: 0 1em 3em 1em;
       margin: 0 2em 0 0;

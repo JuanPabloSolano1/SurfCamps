@@ -21,16 +21,15 @@ class SurfcampsController < ApplicationController
   end
 
   def create
-    @surfcamp = Surfcamp.new(review_params)
-    # we need `restaurant_id` to associate review with corresponding restaurant
     @location = Location.find(params[:location_id])
+    @surfcamp = Surfcamp.new(review_params)
     @surfcamp.location = @location
     @surfcamp.save
-    redirect_to locations_path(@location)
+    redirect_to location_path(@location)
   end
 
   def review_params
-    params.require(:surfcamp).permit(:name,:stars,:price,:location_id)
+    params.require(:surfcamp).permit(:name,:stars,:price,:photo)
   end
 end
 

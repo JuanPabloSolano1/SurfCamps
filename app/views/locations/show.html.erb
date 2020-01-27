@@ -1,14 +1,22 @@
 <h3><%=@location.name%></h3>
-
- <section class="carousel">
+        <section class="carousel">
           <div class="reel">
             <% @surfcamps.each do |surfcamp|%>
             <article>
+              <%if surfcamp.photo.attached?%>
+              <a href="#" class="image featured"><%=image_tag surfcamp.photo, width: 400, height: 300, crop: :fill %></a>
+              <%end%>
               <header>
-              </header><%=link_to location_surfcamp_path(surfcamp) do %>
-              <h3><strong><%=surfcamp.name%></strong></h3>
+               <%=link_to location_surfcamp_path(@location, surfcamp) do %>
+             <h3><strong><%=surfcamp.name%></strong></h3>
             <% end %>
-            <%end%>
+              </header>
             </article>
+            <%end%>
           </div>
-</section>
+        </section>
+
+<div class="text-center">
+<%=link_to "Create new Surfcamp",new_location_surfcamp_path(@location),:class => "button circled scroll"%>
+<%=link_to "Go to Locations",locations_path,:class => "button circled scroll"%>
+</div>
