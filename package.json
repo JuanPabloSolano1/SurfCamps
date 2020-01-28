@@ -1,5 +1,7 @@
 {
   "name": "Surfcamps",
   "private": true,
-  "dependencies": {}
+  "dependencies": {
+    "mapbox-gl": "^1.7.0"
+  }
 }

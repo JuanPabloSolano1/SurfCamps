@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_01_24_173140) do
+ActiveRecord::Schema.define(version: 2020_01_28_090022) do
 
   create_table "active_storage_attachments", force: :cascade do |t|
     t.string "name", null: false
@@ -41,6 +41,9 @@ ActiveRecord::Schema.define(version: 2020_01_24_173140) do
     t.datetime "updated_at", null: false
     t.string "description"
     t.string "photo"
+    t.float "latitude"
+    t.float "longitude"
+    t.string "address"
   end
 
   create_table "surfcamps", force: :cascade do |t|

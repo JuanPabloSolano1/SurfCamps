@@ -29,6 +29,7 @@ gem 'simple_form'
 # gem 'bcrypt', '~> 3.1.7'
 gem 'dotenv-rails', groups: [:development, :test]
 gem 'cloudinary', '~> 1.12.0'
+gem 'geocoder'
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 
