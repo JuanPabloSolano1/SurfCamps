@@ -1,7 +1,6 @@
 class LocationsController < ApplicationController
   def index
-   @locations = Location.all
-   @locations = Location.geocoded #returns flats with coordinates
+   @locations = Location.geocoded
 
     @markers = @locations.map do |location|
       {
@@ -34,7 +33,6 @@ class LocationsController < ApplicationController
   def update
   @location = Location.find(params[:id])
   @location.update(review_params)
-
   end
 
   def destroy
@@ -42,6 +40,6 @@ class LocationsController < ApplicationController
   end
 
   def review_params
-    params.require(:location).permit(:name,:description,:photo)
+    params.require(:location).permit(:name,:description,:photo,:address)
   end
 end

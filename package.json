@@ -2,6 +2,10 @@
   "name": "Surfcamps",
   "private": true,
   "dependencies": {
+    "@rails/webpacker": "4.2.2",
     "mapbox-gl": "^1.7.0"
+  },
+  "devDependencies": {
+    "webpack-dev-server": "^3.10.1"
   }
 }
