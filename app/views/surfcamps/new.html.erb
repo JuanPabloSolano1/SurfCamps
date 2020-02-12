@@ -1,8 +1,9 @@
 <div class="container">
-<%= simple_form_for [@location,@surfcamp]  do |f|%>
+<%= simple_form_for ([@continent,@location,@surfcamp])  do |f|%>
   <%= f.input :name %>
   <%= f.input :stars %>
   <%= f.input :price %>
+  <%= f.input :address %>
   <%=f.input :photo, as: :file %>
   <%= f.button :submit %>
 <% end %>

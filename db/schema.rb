@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_01_28_090022) do
+ActiveRecord::Schema.define(version: 2020_02_12_171529) do
 
   create_table "active_storage_attachments", force: :cascade do |t|
     t.string "name", null: false
@@ -33,6 +33,13 @@ ActiveRecord::Schema.define(version: 2020_01_28_090022) do
     t.index ["key"], name: "index_active_storage_blobs_on_key", unique: true
   end
 
+  create_table "continents", force: :cascade do |t|
+    t.string "name"
+    t.text "description"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
   create_table "locations", force: :cascade do |t|
     t.string "name"
     t.integer "average_price"
@@ -44,6 +51,8 @@ ActiveRecord::Schema.define(version: 2020_01_28_090022) do
     t.float "latitude"
     t.float "longitude"
     t.string "address"
+    t.integer "continent_id"
+    t.index ["continent_id"], name: "index_locations_on_continent_id"
   end
 
   create_table "surfcamps", force: :cascade do |t|
@@ -53,6 +62,9 @@ ActiveRecord::Schema.define(version: 2020_01_28_090022) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.integer "location_id"
+    t.string "address"
+    t.float "latitude"
+    t.float "longitude"
     t.index ["location_id"], name: "index_surfcamps_on_location_id"
   end
 

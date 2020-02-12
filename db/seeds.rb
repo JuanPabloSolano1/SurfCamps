@@ -11,10 +11,10 @@
 # location1 = Location.new(name: "Maldives", average_price: 3, description: "An Amazing Villa close to the city")
 # location1.save
 
-# location1 = Location.create(name:"Spain", address: "Carrera de S. Jerónimo, 34, 28014")
-# location2 = Location.create(name:"France")
+# continent1 = Continent.create(name:"África", description: "Test")
+location2 = Location.create(name:"France", continent_id: 1)
 # location3 = Location.create(name:"Colombia")
-# surfcamp1 = Surfcamp.create(name: "Mallorca",location_id: 1)
+surfcamp1 = Surfcamp.create(name: "Mallorca",location_id: 1, address: "Mallorca")
 # surfcamp2 = Surfcamp.create(name: "Canary Islands",location_id: 1)
 # surfcamp3 = Surfcamp.create(name: "Marsella",location_id: 2)
 # surfcamp4 = Surfcamp.create(name: "Paris",location_id: 2)
