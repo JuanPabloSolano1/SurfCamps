@@ -1,29 +1,34 @@
 class LocationsController < ApplicationController
   def index
-   @locations = Location.geocoded
+   @continent = Continent.find(params[:continent_id])
+   @locations = Location.where(continent_id: @continent.id)
+   # @locations = Location.geocoded
 
-    @markers = @locations.map do |location|
-      {
-        lat: location.latitude,
-        lng: location.longitude
-      }
-    end
+   #  @markers = @locations.map do |location|
+   #    {
+   #      lat: location.latitude,
+   #      lng: location.longitude
+   #    }
   end
 
   def show
-    @location = Location.find(params[:id])
-    @surfcamps = Surfcamp.select{|surfcamp| surfcamp if surfcamp.location_id == @location.id}
+    @continent = Continent.find(params[:continent_id])
+    @locations = Location.where(continent_id: @continent.id)
     # Another way of filtering results
     # @surfcamps = Surfcamp.where(location_id: @location.id)
   end
 
   def new
+   @continent = Continent.find(params[:continent_id])
    @location = Location.new
   end
 
   def create
-   @location = Location.create(review_params)
-   redirect_to(locations_path)
+   @continent = Continent.find(params[:continent_id])
+   @location = Location.new(review_params)
+   @location.continent = @continent
+   @location.save
+   redirect_to(continents_path)
   end
 
   def edit

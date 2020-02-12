@@ -1,0 +1,18 @@
+<div class="banner">
+  <%if @location.photo.attached?%>
+  <%=image_tag @location.photo%>
+  <%end%>
+</div>
+
+<h3><%=@location.name%></h3>
+
+<div>
+<%@surfcamps.each do |surfcamp|%>
+<%=surfcamp.name%>
+<%end%>
+</div>
+
+<div class="text-center">
+<%=link_to "Create new Surfcamp",new_continent_location_surfcamp_path(@continent,@location),:class => "button circled scroll"%>
+<%=link_to "Go to Continents",continents_path,:class => "button circled scroll"%>
+</div>
