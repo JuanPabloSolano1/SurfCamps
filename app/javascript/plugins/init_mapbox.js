@@ -7,7 +7,7 @@ const buildMap = () => {
   return new mapboxgl.Map({
     container: 'map',
     style: 'mapbox://styles/juanpablosolano123/ck5zjaey10ue31is11gek3u7x',
-    zoom: 4
+    zoom: 4,
   });
 };
 
@@ -31,6 +31,8 @@ const initMapbox = () => {
     const markers = JSON.parse(mapElement.dataset.markers);
     addMarkersToMap(map, markers);
     fitMapToMarkers(map, markers);
+    map.scrollZoom.disable()
+    map.addControl(new mapboxgl.NavigationControl());
   }
 };
 

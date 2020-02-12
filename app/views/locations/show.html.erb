@@ -1,20 +1,21 @@
-<h3><%=@location.name%></h3>
-        <section class="carousel">
-          <div class="reel">
-            <% @surfcamps.each do |surfcamp|%>
-            <article>
-              <%if surfcamp.photo.attached?%>
-              <a href="#" class="image featured"><%=image_tag surfcamp.photo, width: 400, height: 300, crop: :fill %></a>
-              <%end%>
-              <header>
-               <%=link_to location_surfcamp_path(@location, surfcamp) do %>
-             <h3><strong><%=surfcamp.name%></strong></h3>
-            <% end %>
-              </header>
-            </article>
-            <%end%>
-          </div>
-        </section>
+<%if @location.photo.attached?%>
+<%=image_tag @location.photo, width: 400, height: 300, crop: :fill, class: "location_banner" %>
+<%end%>
+<h3 class="location_name"><%=@location.name%></h3>
+
+<% @surfcamps.each do |surfcamp|%>
+<div class="card-trip">
+  <%if surfcamp.photo.attached?%>
+  <%=image_tag surfcamp.photo, width: 400, height: 300, crop: :fill, class: "img"%>
+  <%end%>
+  <div class="card-trip-infos">
+  <%=link_to location_surfcamp_path(@location, surfcamp) do %>
+  <h2><strong><%=surfcamp.name.capitalize%></strong></h2>
+  <%end%>
+  <h2 class="card-trip-pricing"><%=surfcamp.price%>/night</h2>
+</div>
+</div>
+<%end%>
 
 <div class="text-center">
 <%=link_to "Create new Surfcamp",new_location_surfcamp_path(@location),:class => "button circled scroll"%>
